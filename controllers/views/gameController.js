@@ -1,0 +1,27 @@
+const axios = require("axios");
+const settings = require("../../config/settings");
+async function renderHomePage(req, res) {
+  let data = {};
+  //   //res.render("home", { title: "Games!" });
+  //   let data = [];
+  //   if (req.query.like) {
+  //     const response = await axios.get(
+  //       `${settings.ROOT}:${settings.PORT}/api/games`,
+  //       { params: req.query }
+  //     );
+  //     data = response.data;
+  //     for (game of data) {
+  //       const cover = await axios.get(
+  //         `${settings.ROOT}:${settings.PORT}/api/covers`,
+  //         { params: { gameid: game.game_id } }
+  //       );
+  //       game.cover = cover.data[0] ? cover.data[0].url : "";
+  //     }
+  //   }
+  res.render("game", {
+    title: "Games!",
+
+    gameData: data,
+  });
+}
+module.exports = { renderHomePage };
